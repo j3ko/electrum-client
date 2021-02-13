@@ -222,6 +222,9 @@ class ElectrumClient extends Client {
 	blockchainTransaction_get(tx_hash, verbose) {
 		return this.request('blockchain.transaction.get', [tx_hash, verbose || false]);
 	}
+	blockchainTransaction_idFromPos(height, tx_pos, merkle) {
+		return this.request('blockchain.transaction.id_from_pos', [height, tx_pos, merkle || false]);
+	}
 	blockchainTransaction_getBatch(tx_hash, verbose) {
 		return this.requestBatch('blockchain.transaction.get', tx_hash, verbose);
 	}
